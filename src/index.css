@@ -1,0 +1,8 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.input-black::placeholder {
+    color: #0008;
+  }
