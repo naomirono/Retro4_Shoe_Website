@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
-const Navbar = () => {
+const Navbar = ({ setStoredToken }) => {
   const [nav, setnav] = useState(false);
+  const navigate = useNavigate();
 
   const handleNav = () => {
     setnav(!nav);
@@ -17,10 +19,7 @@ const Navbar = () => {
           {" "}
           Home
         </Link>
-        <Link to="/Product" className="p-4">
-          {" "}
-          Product
-        </Link>
+
         <Link to="/Featured" className="p-4">
           {" "}
           Featured
@@ -28,6 +27,23 @@ const Navbar = () => {
         <Link to="/Orders" className="p-4">
           {" "}
           Orders
+        </Link>
+        <Link to="/AddProduct" className="p-4 gap-2 flex ">
+          {" "}
+          Add
+          <span>Product</span>
+        </Link>
+        <Link to="/">
+          <li
+            className="p-4"
+            onClick={() => {
+              navigate("/");
+              localStorage.setItem("token", "");
+              setStoredToken("");
+            }}
+          >
+            Logout
+          </li>
         </Link>
       </ul>
 

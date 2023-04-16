@@ -15,10 +15,15 @@ function ProductCard() {
 
   return (
     <div className="flex flex-wrap justify-center py-8 max-w-[1240px] mx-auto">
-    {products.map((product) => (
-      <div key={product.id} className="w-full sm:w-1/2 lg:w-1/3 p-4 flex">
-        <Link to={`/product/${product.id}`} className=" p-4 flex-1 flex flex-col ">
-         
+      {products.map((product) => (
+        <div
+          key={product.id}
+          className="w-full sm:w-1/2 lg:w-1/3 p-4 flex hover:scale-105 transition-all duration-500 cursor-pointer"
+        >
+          <Link
+            to={`/product/${product.id}`}
+            className=" p-4 flex-1 flex flex-col "
+          >
             <div className="bg-white rounded-lg overflow-hidden">
               <img
                 src={product.image}
@@ -33,13 +38,10 @@ function ProductCard() {
             <div className="flex justify-center mt-auto ">
               <p className="text-gray-600">${product.price}</p>
             </div>
-          
-        </Link>
-      </div>
-    ))}
-  </div>
-  
-  
+          </Link>
+        </div>
+      ))}
+    </div>
   );
 }
 
