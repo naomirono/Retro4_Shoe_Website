@@ -156,12 +156,24 @@ const AddProduct = () => {
                 </div>
 
                 <div className="bg-gray-50 flex justify-center px-4 py-3 text-right sm:px-6">
-                  <button
-                    type="submit"
-                    className=" text-center rounded-md border border-transparent  bg-[#3B841F] py-2 px-4  font-bold text-white shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
-                  >
-                    Add Product
-                  </button>
+                  {image !== "" &&
+                  price !== "" &&
+                  description !== "" &&
+                  name !== "" ? (
+                    <button
+                      type="submit"
+                      className=" text-center rounded-md border border-transparent  bg-[#3B841F] py-2 px-4  font-bold text-white shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+                    >
+                      Add Product
+                    </button>
+                  ) : (
+                    <button
+                      type="button"
+                      className=" text-center rounded-md border border-transparent  bg-[#3B841F] py-2 px-4  font-bold text-white shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+                    >
+                      Add Your Product Details
+                    </button>
+                  )}
                 </div>
               </div>
             </div>
