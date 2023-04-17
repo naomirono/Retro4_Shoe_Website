@@ -39,6 +39,8 @@ function App() {
           <Route path="/" element={<SplashScreen />} />
         )}
 
+     
+
         <Route
           path="/login"
           element={<LoginForm setStoredToken={setStoredToken} />}
