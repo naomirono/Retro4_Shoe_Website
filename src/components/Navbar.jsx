@@ -13,7 +13,7 @@ const Navbar = ({ setStoredToken }) => {
 
   return (
     <nav className="flex justify-between items-center h-24 max-w-[1240px] mx-auto px-4 text-white bg-black">
-      <h1 className="w-full text-3xl font-bold  text-yellow-500">Retro.</h1>
+      <h1 className="w-full text-3xl font-bold  text-orange-400">Retro.</h1>
       <ul className="hidden md:flex">
         <Link to="/" className="p-4">
           {" "}
@@ -24,9 +24,14 @@ const Navbar = ({ setStoredToken }) => {
           {" "}
           Featured
         </Link>
+  
         <Link to="/Orders" className="p-4">
           {" "}
           Orders
+        </Link>
+        <Link to="/Reviews" className="p-4">
+          {" "}
+          Reviews
         </Link>
         <Link to="/AddProduct" className="p-4 gap-2 flex ">
           {" "}
