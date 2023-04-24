@@ -29,10 +29,7 @@ const Navbar = ({ setStoredToken }) => {
           {" "}
           Orders
         </Link>
-        <Link to="/Reviews" className="p-4">
-          {" "}
-          Reviews
-        </Link>
+        
         <Link to="/AddProduct" className="p-4 gap-2 flex ">
           {" "}
           Add
