@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Navbar from "./components/Navbar";
 import LoginForm from "./components/LoginForm";
-import ProductCard from "./components/Product";
 import ContactForm from "./components/Contact";
 import SignUp from "./components/SignUp";
 import { Routes, Route } from "react-router-dom";
@@ -10,6 +9,7 @@ import BestSeller from "./components/BestSeller";
 import Orders from "./components/Orders";
 import SplashScreen from "./components/SplashScreen";
 import AddProduct from "./components/AddProduct";
+import ProductPage from "./components/ProductPage";
 
 function App() {
   const [storedToken, setStoredToken] = useState(localStorage.getItem("token"));
@@ -34,7 +34,7 @@ function App() {
       {storedToken && <Navbar setStoredToken={setStoredToken} />}
       <Routes>
         {storedToken ? (
-          <Route path="/" element={<ProductCard />} />
+          <Route path="/" element={<ProductPage />} />
         ) : (
           <Route path="/" element={<SplashScreen />} />
         )}
@@ -65,6 +65,7 @@ function App() {
           path="/Orders"
           element={<Orders loggedInUserId={loggedInUserId} />}
         />
+        
       </Routes>
     </div>
   );
