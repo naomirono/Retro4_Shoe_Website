@@ -37,10 +37,11 @@ const BestSeller = () => {
   };
 
   return (
-    <div className="container mx-auto mt-8">
+    <div className="container mx-auto  h-[89vh]">
+       <h2 className="text-center text-3xl font-bold mt-2 text-white">New <span className="text-orange-400">Arrivals</span></h2>
       <Pagination pageNumber={pageNumber} setPageNumber={setPageNumber} />
       <Swiper
-        className="mt-8"
+        className=""
         slidesPerView={3}
         spaceBetween={20}
         navigation={false}
