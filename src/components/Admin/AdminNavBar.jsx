@@ -20,7 +20,7 @@ const AdminNavBar = ({ setStoredToken }) => {
           <p>All</p> Shoes
         </Link>
 
-        <Link to="/Orders" className="p-4 flex gap-2">
+        <Link to="/AllOrders" className="p-4 flex gap-2">
           {" "}
           <p> All</p> Orders
         </Link>

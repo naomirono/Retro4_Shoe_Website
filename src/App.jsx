@@ -11,6 +11,7 @@ import AddProduct from "./components/Admin/AddProduct";
 import ProductPage from "./components/User/ProductPage";
 import AdminNavBar from "./components/Admin/AdminNavBar";
 import AdminHome from "./components/Admin/AdminHome";
+import AllOrders from "./components/Admin/AllOrders";
 
 function App() {
   const [storedToken, setStoredToken] = useState(localStorage.getItem("token"));
@@ -57,7 +58,6 @@ function App() {
 
         <Route path="/Featured" element={<BestSeller />} />
 
-       
         <Route
           path="/signUp"
           element={<SignUp setStoredToken={setStoredToken} />}
@@ -65,6 +65,7 @@ function App() {
         <Route path="/addProduct" element={<AddProduct />} />
 
         <Route path="/AddProduct" element={<AddProduct />} />
+        <Route path="/AllOrders" element={<AllOrders />} />
 
         <Route
           path="/product/:id"
