@@ -14,15 +14,15 @@ const Orders = ({ loggedInUserId }) => {
   }, []);
 
   return (
-    <div>
-      <h1>Orders</h1>
+    <div className="flex flex-wrap justify-around  items-center">
+      
 
       {orders.map(
         (order) =>
           order.user.id === Number(loggedInUserId) && (
             <div
               key={order.product.id}
-              className="w-full sm:w-1/2 lg:w-1/3  p-4 flex flex-col hover:scale-105 transition-all duration-500 cursor-pointer"
+              className="w-full sm:w-1/2 text-center border-2 rounded-lg border-orange-400 lg:w-1/3  p-4 flex flex-col hover:scale-105 transition-all duration-500 cursor-pointer"
             >
               <div className="bg-white rounded-lg overflow-hidden">
                 <img

@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-
+import { Splide, SplideSlide } from "@splidejs/react-splide";
+import "@splidejs/react-splide/css";
 function ProductDetail({ loggedInUserId }) {
   const { id } = useParams();
   const [product, setProduct] = useState(null);
@@ -81,7 +82,7 @@ function ProductDetail({ loggedInUserId }) {
   return (
     <div className="flex flex-wrap justify-center py-8 max-w-[1240px] mx-auto ">
       {showReviewModal && (
-        <div className="fixed kulim-park bg-white shadow-xl h-[600px] my-auto w-[350px] inset-0 bg-opacity z-10 flex flex-col items-center justify-center w-[400px]  mx-auto">
+        <div className="fixed kulim-park bg-white shadow-xl h-[700px] my-auto w-[900px] inset-0 bg-opacity z-10 flex flex-col items-center justify-center w-[400px]  mx-auto">
           <div className="flex justify-end w-full p-4">
             <button
               className="bg-black text-white px-4 py-2 rounded-lg"
@@ -131,7 +132,7 @@ function ProductDetail({ loggedInUserId }) {
       )}
 
       {showOrderModal && (
-        <div className="fixed kulim-park bg-white shadow-xl h-[600px] my-auto w-[350px] inset-0 bg-opacity z-10 flex flex-col items-center justify-center w-[400px]  mx-auto">
+        <div className="fixed kulim-park bg-white shadow-xl h-[700px] my-auto w-[900px] inset-0 bg-opacity z-10 flex flex-col items-center justify-center w-[400px]  mx-auto">
           <div className="flex justify-end w-full p-4">
             <button
               className="bg-black text-white px-4 py-2 rounded-lg"
@@ -211,17 +212,32 @@ function ProductDetail({ loggedInUserId }) {
             </button>
           </div>
 
-          <h1 className="text-white">reviews</h1>
+          <h1 className="text-white text-center underline text-3xl my-3">reviews</h1>
 
-          {product.reviews.map((review) => (
-            <div className="text-white">
-              <h1>{review.content}</h1>
+          <Splide
+            options={{
+              rewind: true,
+              perPage: 1,
+              perMove: 1,
+              gap: "1rem",
+              pagination: false,
+              arrows: true,
+              autoplay: true,
+              interval: 3000,
+            }}
+          >
+            {product.reviews.map((review) => (
+              <SplideSlide>
+                <div className="text-white p-4 rounded-lg bg-orange-400 w-[60%] mx-auto">
+                  <h1>{review.content}</h1>
 
-              {[...Array(review.score)].map((star) => (
-                <span className="star">&#9733;</span>
-              ))}
-            </div>
-          ))}
+                  {[...Array(review.score)].map((star) => (
+                    <span className="star">&#9733;</span>
+                  ))}
+                </div>
+              </SplideSlide>
+            ))}
+          </Splide>
         </div>
       </div>
     </div>

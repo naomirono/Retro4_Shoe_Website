@@ -89,7 +89,7 @@ const AddProduct = () => {
                       <div className="text-sm text-gray-600" ref={reference}>
                         <label
                           for="file-upload"
-                          className="relative cursor-pointer rounded-md bg-white font-medium text-[#3B841F] focus-within:outline-none "
+                          className="relative cursor-pointer rounded-md bg-white font-medium text-orange-400 focus-within:outline-none "
                         >
                           <span>Add your product's image</span>
                           <input
@@ -162,14 +162,14 @@ const AddProduct = () => {
                   name !== "" ? (
                     <button
                       type="submit"
-                      className=" text-center rounded-md border border-transparent  bg-[#3B841F] py-2 px-4  font-bold text-white shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+                      className=" text-center rounded-md border border-transparent  bg-orange-400 py-2 px-4  font-bold text-white shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
                     >
                       Add Product
                     </button>
                   ) : (
                     <button
                       type="button"
-                      className=" text-center rounded-md border border-transparent  bg-[#3B841F] py-2 px-4  font-bold text-white shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+                      className=" text-center rounded-md border border-transparent  bg-orange-400 py-2 px-4  font-bold text-white shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
                     >
                       Add Your Product Details
                     </button>
