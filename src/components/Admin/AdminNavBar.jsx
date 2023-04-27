@@ -3,7 +3,7 @@ import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 
-const Navbar = ({ setStoredToken }) => {
+const AdminNavBar = ({ setStoredToken }) => {
   const [nav, setnav] = useState(false);
   const navigate = useNavigate();
 
@@ -15,25 +15,20 @@ const Navbar = ({ setStoredToken }) => {
     <nav className="flex justify-between items-center h-24 max-w-[1240px] mx-auto px-4 text-white bg-black">
       <h1 className="w-full text-3xl font-bold  text-orange-400">Retro.</h1>
       <ul className="hidden md:flex">
-        <Link to="/" className="p-4">
+        <Link to="/" className="p-4 flex gap-2">
           {" "}
-          Home
+          <p>All</p> Shoes
         </Link>
 
-        <Link to="/Featured" className="p-4">
+        <Link to="/Orders" className="p-4 flex gap-2">
           {" "}
-          Featured
+          <p> All</p> Orders
         </Link>
-  
-        <Link to="/Orders" className="p-4">
-          {" "}
-          Orders
-        </Link>
-        
+
         <Link to="/AddProduct" className="p-4 gap-2 flex ">
           {" "}
           Add
-          <span>Product</span>
+          <span>Shoe</span>
         </Link>
         <Link to="/">
           <li
@@ -73,10 +68,7 @@ const Navbar = ({ setStoredToken }) => {
             {" "}
             Product
           </Link>
-          <Link to="/" className="p-4 border-b border-gray-600">
-            {" "}
-            Reviews
-          </Link>
+
           <Link to="/" className="p-4 border-b border-gray-600">
             {" "}
             Contact
@@ -91,4 +83,4 @@ const Navbar = ({ setStoredToken }) => {
   );
 };
 
-export default Navbar;
+export default AdminNavBar;

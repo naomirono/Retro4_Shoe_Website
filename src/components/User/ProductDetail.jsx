@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
-import "@splidejs/react-splide/css";
+import "./splide.min.css";
 function ProductDetail({ loggedInUserId }) {
   const { id } = useParams();
   const [product, setProduct] = useState(null);
